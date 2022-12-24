@@ -1,8 +1,8 @@
-import sqlite3 as sq
-from initialization import log
-
-import config
 import datetime
+import sqlite3 as sq
+
+from lib.initialization import log
+import config
 
 
 def sql_start():

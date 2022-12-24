@@ -21,7 +21,7 @@ docker rm \
 # контейнер из нового образа
 docker run \
     --detach \
-    --name=torgigovru \
+    --name=torgigovru_bot \
     --restart unless-stopped \
     --volume /home/oleg/docker/torgigovru_bot/data:/data \
     --volume /home/oleg/docker/torgigovru_bot/log:/log \

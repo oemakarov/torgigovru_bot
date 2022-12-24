@@ -5,9 +5,7 @@ from aiogram.dispatcher import FSMContext
 
 import config
 from lib.sqlite import get_user_search, add_user_search, del_user_search
-from datetime import datetime
-
-from initialization import bot, log
+from lib.initialization import bot, log
 from keyboards.user import user_kb_list, user_kb_del_one_search, user_kb_list_one, user_kb_fcm_cancel
 from __version__ import __version__
 
@@ -31,35 +29,12 @@ async def command_start(message: types.Message):
 \U000025AB <u>@91+симферополь</u> - регион Крым и содержит отдельное слово "Симферополь". "Симферопольский проспект" не проходит
 \U000025AB <u>@23+*парк*</u> - Краснодарский край + парк/парковая/парковка/паркомат
 \U000025AB <u>@50+*авто*+*невск*</u> - Московская область + автомобиль/автоматические ворота + ул Невская/пр. Невский
-\U000025AB <u>автобус+паз</u> - все ПАЗики страны
+\U000025AB <u>автобус+паз</u> - все ПАЗики страны, т.к. без региона
 
 <code>v{__version__}</code>
 '''
     await bot.send_message(message.from_user.id, message_text, parse_mode=types.ParseMode.HTML)
     await show_list(message)
-
-
-# async def command_help(message: types.Message):
-#     message_text = '''<b>КАК ИСКАТЬ, ЧТО ПИСАТЬ БОТУ</b>
-
-
-# <b>Используйте лаконичные фразы:</b>
-# "<s>проспект Генерала Острякова</s>" - "Острякова"
-# "<s>Гоголя 12</s>" - "Гоголя"
-# "<s>СНТ ТСН Энергетик</s>" - "Энергетик"
-
-# <b>Примеры:</b>
-# <code>\U000025AA новости вашей улицы: "Вакуленчука"
-# \U000025AA новости вашего СТ: "Ахтиар"
-# \U000025AA новости вашего села: "Широкое"</code>
-
-# <code>\U000025AB Присылаются новости опубликованные после добавления поиска
-# \U000025AB Поиск не зависит от регистра
-# \U000025AB Данные обновляются каждую минуту
-# </code>
-# '''
-#     await bot.send_message(message.from_user.id, message_text, parse_mode=types.ParseMode.HTML)
-#     await show_list(message)
 
 
 async def del_choice(call: CallbackQuery):
@@ -132,7 +107,6 @@ async def admin_message(message_text: str, parse_mode: types.ParseMode = None):
 
 def register_handlers_user(dp: Dispatcher):
     dp.register_message_handler(command_start, commands=['start'])
-    # dp.register_message_handler(command_help, commands=['help'])
     dp.register_message_handler(process_new_search_text, state=FSM_search_text.search_text)
     dp.register_callback_query_handler(show_list_callback, text='user_list')
     dp.register_callback_query_handler(del_choice, text='user_del_choice')

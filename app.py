@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from aiogram.utils import executor
-from initialization import dp, log
+
 from handlers import user, admin, errors
+from lib.initialization import dp, log
 from lib.sqlite import sql_start
 from __version__ import __version__
 
