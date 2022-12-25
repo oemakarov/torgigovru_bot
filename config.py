@@ -1,8 +1,8 @@
 from pathlib import Path
-# import config_prod_test
+import secret
 
 # BOT_TOKEN = config_prod_test.BOT_TOKEN
-BOT_TOKEN = '2003655761:AAFkkjVKp6HdYLEH1GSsgaUtPlVjQPoAkhg'  # @torgigovru_bot
+BOT_TOKEN = secret.BOT_TOKEN  # @torgigovru_bot
 
 
 sqlite_db_filename = Path('data', 'user_data.db')
