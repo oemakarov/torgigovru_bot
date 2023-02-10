@@ -16,4 +16,5 @@ async def on_startup(_):
     log.error(f'----- BOT START v{__version__}')
     sql_start()
 
+
 executor.start_polling(dp, skip_updates=True, on_startup=on_startup)

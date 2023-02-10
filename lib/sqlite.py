@@ -17,6 +17,7 @@ def sql_start():
                             add_datetime TEXT, 
                             user_id TEXT, 
                             search TEXT,
+                            send_link INTEGER DEFAULT 0,
                             username TEXT, 
                             user_firstname TEXT, 
                             user_lastname TEXT, 
@@ -59,6 +60,13 @@ async def del_user_search(user_id: int, search: str):
                         AND 
                         search=?''', (user_id, search))
     base.commit()
+
+
+
+# def add_field():
+#     cur.execute("ALTER TABLE users ADD COLUMN send_link 'INTEGER DEFAULT 0'")
+
+
 
 
 # async def del_all_user_search(user_id: int):

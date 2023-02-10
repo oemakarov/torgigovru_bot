@@ -11,12 +11,12 @@ docker build \
 
 # останавливаем запущенный контейнер
 docker stop \
-    torgigovru 
+    torgigovru_bot 
 
 # удаляем запущенный контейнер
 docker rm \
     --force \
-    torgigovru 
+    torgigovru_bot 
 
 # контейнер из нового образа
 docker run \
