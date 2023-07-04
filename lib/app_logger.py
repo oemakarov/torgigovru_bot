@@ -32,7 +32,7 @@ def get_stream_handler():
     return stream_handler
 
 def get_telegram_handler():
-    telegram_handler = TelegramBotHandler(token=config.BOT_TOKEN , chat_id=config.admin_user_id)
+    telegram_handler = TelegramBotHandler(token=config.BOT_TOKEN , chat_id=config.ADMIN_USER_ID)
     telegram_handler.setLevel(logging.ERROR)
     telegram_handler.setFormatter(logging.Formatter(config.log_format_telegram))
     return telegram_handler

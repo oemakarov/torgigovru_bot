@@ -1,9 +1,9 @@
 from pathlib import Path
-import secret
+import config_secret
 
 # BOT_TOKEN = config_prod_test.BOT_TOKEN
-BOT_TOKEN = secret.BOT_TOKEN  # @torgigovru_bot
-
+BOT_TOKEN = config_secret.BOT_TOKEN  # @torgigovru_bot
+ADMIN_USER_ID = config_secret.ADMIN_USER_ID
 
 sqlite_db_filename = Path('data', 'user_data.db')
 
@@ -15,5 +15,4 @@ log_format_print = '[%(asctime)s] [%(levelname)s] %(message)s'
 log_format_telegram = '[%(asctime)s.%(msecs)03d] [%(levelname)s] %(message)s'
 log_datefmt = '%Y-%m-%d %H:%M:%S'
 # log_datefmt = '%H:%M:%S'
-admin_user_id = '55562319'
 

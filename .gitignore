@@ -1,5 +1,6 @@
 # lib/
-secret.py
+config_secret.py
+data/
 
 
 # Byte-compiled / optimized / DLL files

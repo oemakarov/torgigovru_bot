@@ -104,7 +104,7 @@ async def fcm_cancel(call: CallbackQuery, state: FSMContext):
 
 
 async def admin_message(message_text: str, parse_mode: types.ParseMode = None):
-    await bot.send_message(config.admin_user_id, message_text, parse_mode=parse_mode, disable_notification=True)
+    await bot.send_message(config.ADMIN_USER_ID, message_text, parse_mode=parse_mode, disable_notification=True)
 
 
 def register_handlers_user(dp: Dispatcher):
